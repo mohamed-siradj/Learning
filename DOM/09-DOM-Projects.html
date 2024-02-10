@@ -8,10 +8,26 @@
 </head>
 
 <body>
+  
   <p>youtube subscribe button</p>
   <button onclick="
     subscribe();
   " class="sub-button">Subscribe</button>
+  
+  
+  
+  <p>amazon shiping calculator</p>
+  <p>order under 40$ = +10$ shiping </p>
+  <p>order over 40$ = Free shiping </p>
+  <input placeholder="cost of order" class="js-cost" onkeydown="
+    handleEnterKey(event);
+  ">
+  <button onclick="
+     costCalculator();
+    ">calculate</button>
+  <p class="total-cost"></p>
+  
+  
   <script>
     // to make code more cleaner
     function subscribe () {
@@ -22,7 +38,28 @@
         buttonElement.innerHTML = 'Subscribe';
       }
     }
+    // when u get a value from DOM the value is a string 
+   function handleEnterKey (event) {
+     if (event.key === 'Enter') {
+       costCalculator();
+     }
+   }
+    function costCalculator () {
+      const inputElement = document.querySelector('.js-cost');
+      let cost = Number(inputElement.value);
+      if(cost < 40) {
+        cost = cost + 10;
+      }
+      document.querySelector('.total-cost')
+       .innerHTML = `$${cost}`;
+      
+    }
+    
+    
   </script>
+  
+  
+  
 </body>
 
 </html>
