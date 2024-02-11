@@ -2,26 +2,66 @@
 <html>
   <head>
     <title>Rock Paper Scissors</title>
+    <style>
+      body {
+        background-color: #101010;
+        color: white;
+        font-family: Arial;
+      }
+      .game-title {
+        font-size: 26px;
+        font-weight: bold;
+      }
+      button {
+        height: 100px;
+        width: 100px;
+        background-color: transparent;
+        border: 1px solid white;
+        border-radius: 50%;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+      .button-pic {
+        height: 50px;
+        background-color: transparent;
+      }
+      .result {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 50px;
+      }
+      .score {
+        margin-top: 50px;
+      }
+      .reset {
+        height: 40px;
+        background-color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
-    <p>Rock Paper Scissors</p>
+    <p class="game-title">Rock Paper Scissors</p>
     <button onclick="
       playGame('rock');
-    ">Rock</button>
+    "><img src="images/rock-emoji.png" class="button-pic"></button>
 
     <button onclick="
       playGame('paper');
-    ">Paper</button>
+    "><img src="images/paper-emoji.png" class="button-pic"></button>
 
     <button onclick="
       playGame('scissors');
-    ">Scissors</button>
+    "><img src="images/scissors-emoji.png" class="button-pic"></button>
 
-    <p class="js-result"></p>
+    <p class="js-result result">You win.</p>
     <p class="js-moves"></p>
-    <p class="js-score"></p>
+    <p class="js-score score"></p>
 
-    <button onclick="
+    <button class="reset" onclick="
       score.wins = 0;
       score.losses = 0;
       score.ties = 0;
@@ -30,6 +70,8 @@
     ">Reset Score</button>
 
     <script>
+      // score variable 
+      // advanced move nigga xd
       let score = JSON.parse(localStorage.getItem('score')) || {
         wins: 0,
         losses: 0,
@@ -52,7 +94,7 @@
         const computerMove = pickComputerMove();
 
         let result = '';
-
+        // game if statement
         if (playerMove === 'scissors') {
           if (computerMove === 'rock') {
             result = 'You lose.';
@@ -88,26 +130,36 @@
         } else if (result === 'Tie.') {
           score.ties += 1;
         }
-
+        // save score in local storage
         localStorage.setItem('score', JSON.stringify(score));
-
+        
+        // update score function declaration
         updateScoreElement();
-
+        
+        // show result value
         document.querySelector('.js-result').innerHTML = result;
-
-        document.querySelector('.js-moves').innerHTML = `You ${playerMove} - ${computerMove} Computer`;
+        // show your move and computer move 
+        document.querySelector('.js-moves').innerHTML = `
+        You
+      <img src="images/${playerMove}-emoji.png" class="button-pic">
+      <img src="images/${computerMove}-emoji.png" class="button-pic">
+      computer
+        `;
       }
-
+      
+      //update score
+ 
       function updateScoreElement() {
         document.querySelector('.js-score')
           .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
       }
-
+      // pick random move from computer function
       function pickComputerMove() {
+        // random number 
         const randomNumber = Math.random();
-
+        // computer move variable
         let computerMove = '';
-
+        // if statement to chose the move 
         if (randomNumber >= 0 && randomNumber < 1 / 3) {
           computerMove = 'rock';
         } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
@@ -115,9 +167,8 @@
         } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
           computerMove = 'scissors';
         }
-
+        // return the chosen move to computer variable
         return computerMove;
       }
     </script>
   </body>
-</html>
