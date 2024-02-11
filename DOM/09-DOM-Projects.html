@@ -4,25 +4,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title>DOM</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .button-title {
+      font-weight: bold;
+    }
+    .sub {
+      color: white;
+      border-radius: 20px;
+      border: none;
+      background-color: black;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-bottom: 50px;
+    }
+    .title {
+      font-weight: bold;
+    }
+    .is-subscribed {
+      background-color: #DADBDE;
+      color: black;
+    }
+    
+    .cost-input {
+      padding: 10px;
+      outline: none;
+    }
+    .calc-button {
+      font-size: 15px;
+      padding: 10px;
+      background-color: #44AE4D;
+      border: 1px solid black;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
   
-  <p>youtube subscribe button</p>
+  <p class="button-title">youtube subscribe button</p>
   <button onclick="
     subscribe();
-  " class="sub-button">Subscribe</button>
+  " class="sub-button sub">Subscribe</button>
   
   
   
-  <p>amazon shiping calculator</p>
+  <p class="title">amazon shiping calculator</p>
   <p>order under 40$ = +10$ shiping </p>
   <p>order over 40$ = Free shiping </p>
-  <input placeholder="cost of order" class="js-cost" onkeydown="
+  <input placeholder="cost of order " class="js-cost cost-input" onkeydown="
     handleEnterKey(event);
   ">
-  <button onclick="
+  <button class="calc-button" onclick="
      costCalculator();
     ">calculate</button>
   <p class="total-cost"></p>
@@ -34,8 +72,10 @@
       const buttonElement = document.querySelector('.sub-button');
       if (buttonElement.innerHTML === 'Subscribe') {
         buttonElement.innerHTML = 'Subscribed';
+        buttonElement.classList.add('is-subscribed');
       } else {
         buttonElement.innerHTML = 'Subscribe';
+        buttonElement.classList.remove('is-subscribed');
       }
     }
     // when u get a value from DOM the value is a string 

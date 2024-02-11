@@ -1,0 +1,15 @@
+/* Start Global rules*/
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+/*End Global Rules */
