@@ -1,0 +1,37 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>get mail</title>
+  <!-- boxicon link -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <!-- main css file-->
+  <link rel="stylesheet" href="main.css">
+   <!-- js file-->
+   <script src="index.js"></script>
+  <!-- EmailJS -->
+  <script
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("FA2EH-c5Ppcmyz817");
+      })();
+    </script>
+</head>
+
+<body>
+  
+  <div class="container">
+     <h2>Login</h2>
+   <div class="box">
+       <input id="email" type="email" placeholder="Enter your email" required>
+       <input id="name" type="text" placeholder="Name" required>
+     <button onclick="sendMail()">Sent</button>
+   </div>
+  </div>
+  
+</body>
+
+</html>
