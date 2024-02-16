@@ -9,7 +9,7 @@ let guessedNums = [];
 function play() {
   let userGuess = document.getElementById("number").value;
   if (userGuess < 1 || userGuess > 10) {
-    alert("please enter name between 1 and 10");
+    alert("please enter num between 1 and 10");
   } else {
     guessedNums.push(userGuess);
     numOfGuesses += 1;
