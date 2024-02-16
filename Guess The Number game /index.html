@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guess The Number</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="container">
+    <h3> I am thinking of a number between 1-10</h3>
+    <h3>can you guess it?</h3>
+    <input type="text" id="number" placeholder="Number">
+    <button onclick="play()" id="guess">Guess</button>
+    <p id="message1">no.of guesses: 0 </p>
+    <p id="message2">guesses numbers are: none</p>
+    <p id="message3"></p>
+  </div>
+  <script src = "index.js">
+    // i need a reset button 
+    // js file better
+    /*
+    let msg1 = document.getElementById("message1");
+    let msg2 = document.getElementById("message2");
+    let msg3 = document.getElementById("message3");
+
+    let randomNumber = Math.floor(Math.random() * 10) + 1;
+    let numOfGuesses = 0;
+    let guessedNums = [];
+
+    function play() { 
+      let userGuess = document.getElementById("number").value;
+      if (userGuess < 1 || userGuess > 10) {
+        alert("please enter name between 1 and 10");
+      } else {
+        guessedNums.push(userGuess);
+        numOfGuesses += 1;
+        
+        if (userGuess < randomNumber) {
+          msg1.textContent = "your guess is too low";
+          msg2.textContent = "no.of guesses: " + numOfGuesses;
+          msg3.textContent = "guessed nums are: " + guessedNums;
+        } else if (userGuess > randomNumber) {
+          msg1.textContent = "your guess is too high";
+          msg2.textContent = "no.of guesses: " + numOfGuesses;
+          msg3.textContent = "guessed nums are: " + guessedNums;
+        } else if (userGuess == randomNumber) {
+          msg1.textContent = "you win ";
+          msg2.textContent = "the number was " + randomNumber;
+          msg3.textContent = "you guessed it in " + numOfGuesses + " guesses";
+          document.getElementById("guess").disabled = true;
+        }
+      }
+    }
+    */
+  </script>
+</body>
+</html>
