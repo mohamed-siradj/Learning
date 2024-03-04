@@ -66,10 +66,13 @@ let checkWin = function() {
 }
 */
 
+
 const playerX = 'x-player';
 const playerO = 'o-player';
 let playerTurn = true;
 let box = document.querySelectorAll('[box]');
+
+
 //let resetBtn = document.getElementsByClassName('reset');
 
 // console.log(box
@@ -87,6 +90,7 @@ for (let i = 0; i < box.length; i++) {
 
 // select all btn elements
 // event for click one time
+
 box.forEach(function (e) {
   e.addEventListener('click', handle, {once : true});
 });
@@ -102,7 +106,10 @@ function handle(ele) {
 function placeMark(cell, currentClass) {
   cell.classList.add(currentClass);
 };
+
+
 // it doesnt work T T 
+
 /* 
 
 function checkWin() {
@@ -129,6 +136,15 @@ function checkWin() {
   }
 };
 */
-  
 
+/* 
+let resetBtn = document.getElementsByClassName('reset');
+resetBtn.onclick = resetGame();
+
+function resetGame() {
+
+}
+*/
+  
+// give up 
 
