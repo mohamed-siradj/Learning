@@ -57,33 +57,35 @@ button {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  position: relative;
 }
 button:active {
   transform: scale(0.98);
 }
-button .o-player {
+.o-player::before {
+  content: '';
   height: 40px;
   width: 40px;
   background-color: transparent;
   border-radius: 50%;
   border: 6px solid #4160B5;
+  position: absolute;
 }
-button .x-player {
-  height: 50px;
-  border: 3px solid #4160B5;
-  border-radius: 2px;
-  transform: rotate(45deg);
-  position: relative;
-}
-button .x-player::after {
+.x-player::before {
   content: '';
   height: 50px;
   border: 3px solid #4160B5;
   border-radius: 2px;
-  transform: rotate(-90deg);
+  transform: rotate(45deg);
   position: absolute;
-  bottom: -2.5px;
-  left: -2.5px;
+}
+.x-player::after {
+  content: '';
+  height: 50px;
+  border: 3px solid #4160B5;
+  border-radius: 2px;
+  transform: rotate(135deg);
+  position: absolute;
 }
 .reset {
   color: #175586;
