@@ -7,7 +7,7 @@ let arr = [];
 
 // check winner 
 function winner() {
-  
+  console.log(arr);
   
 }
     /*
@@ -31,7 +31,8 @@ for (var i = 0; i < cells.length; i++) {
    cells[i].addEventListener('click', play);
    //.onclick = play;
    //.addEventListener('click', play, {once : true});
-  arr[i] = cells[i].className;
+  arr.push(cells[i].className);
+  winner();
 }
 function play() { 
   
@@ -46,6 +47,7 @@ function play() {
     
   }
 }
+
 
 // reset button
 // i don't know how it work 
