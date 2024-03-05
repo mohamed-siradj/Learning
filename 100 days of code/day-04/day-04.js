@@ -14,36 +14,11 @@ let play = function() {
         myBox[i].innerHTML = i % 2 === 0 ? '<p class="x-player"></p>' : '<p class="o-player"></p>';
       }
     });
-    if (i > 3 && i < 9) {
-      let checkWin = function() {
-        let cases = {
-          arr: ['onetwothree', 'threesixnine', 'nineeightseven', 'sevenfourone', 'onefivenine', 'threefiveseven', 'twofiveeight', 'fourfivesix']
-        };
-        let oPlayerCheck = [];
-        for (let i = 0; i < myBox.length - 1; i++) {
-          // Tab to edit
-          if (myBox[i].innerHTML === '<p class="x-player"></p>') {
-            xPlayerCheck.push(myBox[i].className);
-          } else if (myBox[i].innerHTML === '<p class="o-player"></p>') {
-            oPlayerCheck.push(myBox[i].className);
-          }
-      
-          if (i === 4 && xPlayerCheck.join('') === arr[i].join('')) {
-            alert('player X win');
-      
-          }
-        }
-        checkWin();
-      }
-      if (i === 8) {
-        break;
-      }
-    }
+    if (i > 3 && i < 9) {}
   }
 }; 
 play();
 
-// probability of win 
 let checkWin = function() {
   let cases = {
     arr: ['onetwothree', 'threesixnine', 'nineeightseven', 'sevenfourone', 'onefivenine', 'threefiveseven', 'twofiveeight', 'fourfivesix']
@@ -107,8 +82,9 @@ function placeMark(cell, currentClass) {
   cell.classList.add(currentClass);
 };
 
+//checkWin () 
 
-// it doesnt work T T 
+// it doesnt work T T ''
 
 /* 
 
