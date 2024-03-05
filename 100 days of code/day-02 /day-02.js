@@ -7,7 +7,7 @@ function addTask() {
   !listContainer ? console.error('not found') : console.log('mzia rah ymshi T-T');
   
   if (toDoInput.value === "") {
-    alert('you must write something!');
+    alert('you need to enter something');
   } else {
     let li = document.createElement('li');
     li.innerHTML = toDoInput.value;
@@ -16,7 +16,6 @@ function addTask() {
     span.innerHTML = '\u00d7';
     li.appendChild(span);
   }
-  toDoInput.value = '';
   saveData();
 }
 
@@ -38,3 +37,17 @@ function showList() {
   
 }
 showList();
+
+let myDate = document.getElementById('date');
+let date = new Date();
+let daysName = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+let dayOfWeek = daysName[date.getDay()];
+let format = '';
+if (date.getHours() > 12) {
+  date.setHours(date.getHours() - 12);
+  format = 'PM';
+}else {
+  format = 'AM';
+}
+
+myDate.textContent = `${dayOfWeek} ${date.getHours()} : ${date.getMinutes()} ${format}`;
