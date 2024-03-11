@@ -43,7 +43,7 @@ function dragAndDrop() {
       box.addEventListener('drop',function () {
         this.append(drag);
         this.style.backgroundImage = 'linear-gradient(135deg, #886C09, #884F09)';
-        this.style.color = '#000';
+        this.style.color = '#fff';
       });
     });
 }
