@@ -90,9 +90,10 @@ body {
 .drag-drop {
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: start;
-  gap: 0px;
+  gap: 10px;
 
 }
 .drag-drop .box {

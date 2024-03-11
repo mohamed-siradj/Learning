@@ -12,8 +12,8 @@ btn.onclick = function () {
     prg.appendChild(text);
     boxes[0].appendChild(prg);
     inp.value = '';
+    dragAndDrop();
   }
-  dragAndDrop();
 }
 function dragAndDrop() {
   let items = document.querySelectorAll('.item'); 
@@ -42,8 +42,8 @@ function dragAndDrop() {
       
       box.addEventListener('drop',function () {
         this.append(drag);
-        this.style.backgroundImage = 'linear-gradient(135deg, #886C09, #884F09)';
-        this.style.color = '#fff';
+        this.style.backgroundImage = 'linear-gradient(135deg, #886C09, #884F09);';
+        this.style.color = '#000';
       });
     });
 }
