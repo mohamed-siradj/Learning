@@ -18,16 +18,19 @@ btn.onclick = function () {
 function dragAndDrop() {
   let items = document.querySelectorAll('.item'); 
   items.forEach(item => {
-    item.addEventListener('dragstart',function () {
-      drag = item;
-      item.style.opacity = '0.5';
+    item.addEventListener('dragstart', function (e) {
+      console.log('drag start');
+      drag = e.target;
+      e.target.style.opacity = '0.5';
     });
-    
-    item.addEventListener('dragend',function () {
+ 
+    item.addEventListener('dragend', function (e) {
+      console.log('drag end');
       drag = null;
+      e.target.style.opacity = '1';
     });
   });
-  
+}
     boxes.forEach(box => {
       box.addEventListener('dragover',function (e) {
         e.preventDefault();
@@ -42,8 +45,7 @@ function dragAndDrop() {
       
       box.addEventListener('drop',function () {
         this.append(drag);
-        this.style.backgroundImage = 'linear-gradient(135deg, #886C09, #884F09);';
+        this.style.backgroundImage = 'linear-gradient(135deg, #886C09, #884F09)';
         this.style.color = '#000';
       });
     });
-}
