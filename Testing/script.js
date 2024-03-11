@@ -1,11 +1,13 @@
+let prg = document.querySelector('p');
 
-let btnClick = document.getElementById('btn');
-btnClick.onclick = function (e) {
-  console.log('its work without declare it ');
-};
+prg.addEventListener('dragstart',function (e) {
+  console.log('darg start');
+  e.target.style.opacity = '0.5';
+});
 
-// btnClick();
-// u have a prblm of why this function work
-// without declare 
-// because of the event 
-// the fun work cause it evry time u clicked the button the fun is called 
+
+prg.addEventListener('dragend',function (e) {
+  console.log('darg end');
+  e.target.style.opacity = '1';
+
+});

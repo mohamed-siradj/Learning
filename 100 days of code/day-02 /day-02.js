@@ -15,6 +15,7 @@ function addTask() {
     span = document.createElement('span');
     span.innerHTML = '\u00d7';
     li.appendChild(span);
+    toDoInput.value = '';
   }
   saveData();
 }
