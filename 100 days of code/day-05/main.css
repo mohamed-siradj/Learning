@@ -1,0 +1,122 @@
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Open sans', sans-serif;
+  
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(135deg, #886C09, #884F09);
+  margin-top: 200px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 20px;
+}
+.input-box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px 25px;
+}
+.input-box input {
+  outline: none;
+  border: none;
+  background-image: linear-gradient(135deg, #886C09, #884F09);
+  height: 30px;
+  border-radius: 10px;
+  display: flex;
+  color: #fff;
+  padding-left: 10px;
+  font-weight: 400;
+}
+::placeholder {
+  color: rgba(255, 255, 255, 0.52);
+  font-weight: 300;
+  padding-left: 10px;
+  
+}
+.input-box button {
+  padding: 5px 20px;
+  font-weight: bold;
+  border: 1px solid #885C09;
+  border-radius: 5px;
+  color: #885C09;
+  background-color: #fff;
+  cursor: pointer;
+}
+.input-box button:active {
+  transform: scale(0.9);
+}
+.drag-drop {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: start;
+  gap: 0px;
+
+}
+.drag-drop .box {
+    background-color: #fff;
+    min-width: 250px;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 5px  20px 20px;
+    gap: 5px;
+}
+.drag-drop .box h2 {
+  margin-bottom: 10px;
+}
+.drag-drop .box p {
+  width: 100%;
+  background-image: linear-gradient(135deg, #886C09, #884F09);
+  height: 30px;
+  border-radius: 10px;
+  color: #fff;
+  padding-left: 10px;
+  font-weight: 400;
+  line-height: 30px;
+}
