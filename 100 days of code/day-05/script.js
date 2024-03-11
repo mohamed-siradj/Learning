@@ -7,6 +7,7 @@ btn.onclick = function () {
   if (inp.value !== '') {
     let prg = document.createElement('p');
     prg.className = 'item';
+    prg.setAttribute('draggable','true');
     let text = document.createTextNode(inp.value);
     prg.appendChild(text);
     boxes[0].appendChild(prg);
@@ -41,7 +42,7 @@ function dragAndDrop() {
       
       box.addEventListener('drop',function () {
         this.append(drag);
-        this.style.background = '#fff';
+        this.style.backgroundImage = 'linear-gradient(135deg, #886C09, #884F09)';
         this.style.color = '#000';
       });
     });
