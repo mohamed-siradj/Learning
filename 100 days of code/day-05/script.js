@@ -1,22 +1,52 @@
-let btn = document.getElementById('btn');
-let inp = document.getElementById('inp');
+// let btn = document.getElementById('btn');
+// let inp = document.getElementById('inp');
 let boxes = document.querySelectorAll('.box');
-let drag = null;
 
 // first step done ^^
+/* 
 btn.onclick = function () {
   if (inp.value !== '') {
     let prg = document.createElement('p');
     prg.className = 'item';
-    //prg.setAttribute('draggable','true');
+    prg.setAttribute('draggable','true');
     let text = document.createTextNode(inp.value);
     prg.appendChild(text);
     boxes[0].appendChild(prg);
     inp.value = '';
-    dragAndDrop();
+    
   }
 }
 
+*/
+  let items = document.querySelectorAll('.item');
+  let selected = null;
+  console.log(items);
+  items.forEach(item =>{
+    // drag item 
+    item.addEventListener('dragstart', function (e) {
+      console.log('drag start');
+      e.target.style.opacity = '0.5';
+      selected = e.target;
+    });
+    // drag over the right box
+    boxes[1].addEventListener('dragover', function (e) {
+      console.log('drag over');
+      e.preventDefault();
+    });
+    //dop in the right box
+    boxes[1].addEventListener('drop', function (e) {
+      console.log('drop');
+      boxes[1].appendChild(selected);
+      selected = null;
+      
+    });
+    
+  });
+
+
+// let items = document.querySelector('.item');
+
+/* 
 
 function dragAndDrop() {
   let items = document.querySelectorAll('.item'); 
@@ -57,4 +87,5 @@ function dragAndDrop() {
         this.style.background = '#fff';
         this.style.color = '#000';
       });
-    });
+    }); 
+*/

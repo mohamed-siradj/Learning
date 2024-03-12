@@ -93,23 +93,21 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: start;
-  gap: 10px;
+  gap: 20px;
 
 }
 .drag-drop .box {
     background-color: #fff;
     min-width: 250px;
+    min-height: 200px;
     max-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     border-radius: 10px;
-    padding: 5px  20px 20px;
+    padding: 20px;
     gap: 5px;
-}
-.drag-drop .box h2 {
-  margin-bottom: 10px;
 }
 .drag-drop .box p {
   width: 100%;
@@ -120,7 +118,4 @@ body {
   padding-left: 10px;
   font-weight: 400;
   line-height: 30px;
-}
-.item {
-  cursor: move;
 }
