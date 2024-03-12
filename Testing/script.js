@@ -1,13 +1,23 @@
-let prg = document.querySelector('p');
+/*  let div = document.querySelector('div');
+ 
+ function countDown() {
+   div.innerHTML -= 1;
+   if (div.innerHTML === '0') {
+     //clearInterval(counter);
+     //div.innerHTML = 'ma chérie is the best';
+   }
+ }
+  let counter = setInterval(countDown,1000);
+ */
+ let p = document.querySelector('p');
 
-prg.addEventListener('dragstart',function (e) {
-  console.log('darg start');
-  e.target.style.opacity = '0.5';
-});
+function countDown() {
+  p.innerHTML -= 1;
+  if (p.innerHTML === '0') {
+    clearInterval(counter);
+    p.innerHTML = 'ma cherie is the best';
+  }
+}
+//countDown();
 
-
-prg.addEventListener('dragend',function (e) {
-  console.log('darg end');
-  e.target.style.opacity = '1';
-
-});
+let counter = setInterval(countDown,1000);
