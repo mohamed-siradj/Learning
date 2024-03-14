@@ -20,25 +20,25 @@
     </header>
     
     <div class="inputs">
-      <input type="text" placeholder="Title">
+      <input type="text" id="title" placeholder="Title">
       
       <div class="price">
-        <input type="number" placeholder="Price">
-        <input type="number" placeholder="Taxes">
-        <input type="number" placeholder="Ads">
-        <input type="number" placeholder="Discount">
-        <p id="total">Total= 200$</p>
+        <input onkeyup="getTotal()" type="number" id="price" placeholder="Price">
+        <input onkeyup="getTotal()" type="number" id="taxes" placeholder="Taxes">
+        <input onkeyup="getTotal()" type="number" id="ads" placeholder="Ads">
+        <input onkeyup="getTotal()" type="number" id="discount" placeholder="Discount">
+        <p id="total">Total = </p>
       </div>
       
-        <input type="text" placeholder="Count">
-        <input type="text" placeholder="Category">
+        <input type="text" id="count" placeholder="Count">
+        <input type="text" id="category" placeholder="Category">
         <button id="btn">Create</button>
       
       <div class="searchBlock">
         <input type="text" id="search" placeholder="Search">
         <div class="btnSearch">
-           <button id="searchTitle">By Title</button>
-           <button id="searchCategory">By Category</button>
+           <button id="searchTitle">Search By Title</button>
+           <button id="searchCategory">Search By Category</button>
         </div>
       </div>
     </div>
@@ -57,46 +57,7 @@
           <th>update</th>
           <th>delete</th>
         </tr>
-        
-        <tbody>
-          <tr>
-            <td>01</td>
-            <td>sa</td>
-            <td>2000</td>
-            <td>20</td>
-            <td>20</td>
-            <td>2001</td>
-            <td>10</td>
-            <td>phone</td>
-            <td><button id="update">Update</button></td>
-            <td><button id="delete">Delete</button></td>
-          </tr>
-          
-          <tr>
-            <td>01</td>
-            <td>sa</td>
-            <td>2000</td>
-            <td>20</td>
-            <td>20</td>
-            <td>2001</td>
-            <td>10</td>
-            <td>phone</td>
-            <td><button id="update">Update</button></td>
-            <td><button id="delete">Delete</button></td>
-          </tr>
-          
-          <tr>
-            <td>01</td>
-            <td>sa</td>
-            <td>2000</td>
-            <td>20</td>
-            <td>20</td>
-            <td>2001</td>
-            <td>10</td>
-            <td>phone</td>
-            <td><button id="update">Update</button></td>
-            <td><button id="delete">Delete</button></td>
-          </tr>
+        <tbody id="tbody">
         </tbody>
       </table>
     

@@ -87,17 +87,17 @@ input:focus {
 }
 .price p {
   padding: 5px 10px;
-  background-color: var(--blue-color);
+  background-color: var(--beige2-color);
   font-size: 12px;
   font-weight: bold;
-  color: var(--beige2-color);
-  border-radius: 20px;
+  color: var(--blue-color);
+  border-radius: 5px;
   height: 30px;
   text-align: center;
   line-height: 20px;
 }
 button {
-  padding: 5px 10px;
+  padding: 10px;
   font-weight: bold;
   font-size: 16px;
   border: none;
@@ -107,7 +107,6 @@ button {
   width: 40%;
   margin-top: 10px;
   cursor: pointer;
-  height: 35px;
 }
 button:active{ 
   transform: scale(0.90);
@@ -135,7 +134,7 @@ button:active{
   margin: 0;
   width: 100%;
   font-size: 14px;
-  height: 30px;
+  padding: 5px;
 }
 table {
   width: 100%;
