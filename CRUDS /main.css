@@ -136,6 +136,10 @@ button:active{
   font-size: 14px;
   padding: 5px;
 }
+#deleteBtn {
+ margin: 10px 0;
+ width: 100%;
+}
 table {
   width: 100%;
   text-align: center;

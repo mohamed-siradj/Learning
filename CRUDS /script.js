@@ -47,6 +47,7 @@ createBtn.onclick = function () {
   localStorage.setItem('product',JSON.stringify(productData));
   //console.log(productData);
   clearData();
+  showData();
 }
 // console.log(localStorage.product);
 
@@ -72,13 +73,33 @@ function showData() {
         <td>${productData[i].taxes}</td>
         <td>${productData[i].ads}</td>
         <td>${productData[i].discount}</td>
-        <td>${productData[i].total$}</td>
+        <td>${productData[i].total}</td>
         <td>${productData[i].category}</td>
         <td><button id="update">Update</button></td>
-        <td><button id="delete">Delete</button></td>
+        <td><button onclick="deleteProduct(${i})" id="delete">Delete</button></td>
       </tr>
     `;
   }
   document.getElementById('tbody').innerHTML = table;
+  let deleteBtn = document.getElementById('deleteBtn');
+  if (productData.length > 0) {
+    deleteBtn.innerHTML = `<button onclick="deleteAll()">Delete All</button>`;
+  } else {
+    deleteBtn.innerHTML = '';
+  }
 }
-showData()
+showData();
+
+
+function deleteProduct(i) {
+  productData.splice(i,1);
+  localStorage.product = JSON.stringify(productData);
+  showData();
+}
+
+
+function deleteAll() {
+  localStorage.clear();
+  productData.splice(0);
+  showData();
+}
