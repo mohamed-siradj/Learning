@@ -74,7 +74,7 @@ input {
   color: var(--blue-color);
 }
 input:focus {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 .price {
   display: flex;
