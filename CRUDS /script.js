@@ -7,7 +7,8 @@ let total = document.getElementById('total');
 let count = document.getElementById('count');
 let category = document.getElementById('category');
 let createBtn = document.getElementById('btn');
-
+let mode = 'create';
+let dummyVariable;
 //all right
 //console.log(title,price,taxes,ads,discount,total,count,category,createBtn);
 
@@ -43,7 +44,22 @@ createBtn.onclick = function () {
     count: count.value,
     category : category.value
   }
-  productData.push(newProduct);
+  if (mode === 'create') {
+    
+    if (newProduct.count > 1) {
+      for (let i = 0; i < newProduct.count; i++) {
+        productData.push(newProduct);
+      }
+    } else {
+      productData.push(newProduct);
+    }
+    
+  } else {
+    productData[dummyVariable] = newProduct;
+    count.style.display = 'block';
+    createBtn.innerHTML = 'Create';
+    mode = 'create';
+  }
   localStorage.setItem('product',JSON.stringify(productData));
   //console.log(productData);
   clearData();
@@ -75,7 +91,7 @@ function showData() {
         <td>${productData[i].discount}</td>
         <td>${productData[i].total}</td>
         <td>${productData[i].category}</td>
-        <td><button id="update">Update</button></td>
+        <td><button onclick="updateProduct(${i})" id="update">Update</button></td>
         <td><button onclick="deleteProduct(${i})" id="delete">Delete</button></td>
       </tr>
     `;
@@ -83,7 +99,7 @@ function showData() {
   document.getElementById('tbody').innerHTML = table;
   let deleteBtn = document.getElementById('deleteBtn');
   if (productData.length > 0) {
-    deleteBtn.innerHTML = `<button onclick="deleteAll()">Delete All</button>`;
+    deleteBtn.innerHTML = `<button onclick="deleteAll()">Delete All (${productData.length})</button>`;
   } else {
     deleteBtn.innerHTML = '';
   }
@@ -102,4 +118,35 @@ function deleteAll() {
   localStorage.clear();
   productData.splice(0);
   showData();
+}
+
+function updateProduct(i) {
+  title.value = productData[i].title;
+  price.value = productData[i].price;
+  taxes.value = productData[i].taxes;
+  ads.value = productData[i].ads;
+  discount.value = productData[i].discount;
+  getTotal();
+  count.style.display = 'none';
+  category.value = productData[i].category;
+  createBtn.innerHTML = 'Update';
+  mode = 'update';
+  dummyVariable = i;
+  scroll({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+let searchMode = 'title';
+let search = document.getElementById('search');
+function getSearchMode(id) {
+  if (id === 'searchTitle') {
+    searchMode = 'title';
+    search.placeholder = 'Search by Title';
+  } else {
+    searchMode = 'searchCategory';
+    search.placeholder = 'Search by Category';
+  }
+  search.focus();
 }
