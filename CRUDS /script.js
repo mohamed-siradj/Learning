@@ -83,6 +83,7 @@ function showData() {
   let table = '';
   for (let i = 0; i < productData.length; i++) {
     table += `
+      <tr>
         <td>${i}</td>
         <td>${productData[i].title}</td>
         <td>${productData[i].price}</td>
